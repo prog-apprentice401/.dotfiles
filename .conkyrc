@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 conky.config = {
 	alignment = 'br',
 	background = false,
-	border_width = 35,
+	border_width = 30,
 	cpu_avg_samples = 2,
 	default_color = 'lightgrey',
 	default_outline_color = 'white',
