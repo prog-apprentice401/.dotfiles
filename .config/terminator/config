@@ -1,0 +1,80 @@
+[global_config]
+  focus = system
+  geometry_hinting = True
+  window_state = maximise
+  borderless = True
+  extra_styling = False
+  tab_position = hidden
+  title_transmit_bg_color = "#000000"
+  title_receive_bg_color = "#c4a000"
+  title_inactive_fg_color = "#888a85"
+  title_inactive_bg_color = "#2e3436"
+  inactive_color_offset = 0.9236001029020793
+  suppress_multiple_term_dialog = True
+  always_split_with_profile = True
+  title_font = Fira Code Light 9
+[keybindings]
+  zoom_in = <Primary>equal
+  cycle_next = None
+  cycle_prev = None
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  rotate_cw = <Alt>r
+  rotate_ccw = <Shift><Alt>r
+  split_horiz = <Alt>minus
+  split_vert = <Alt>equal
+  toggle_scrollbar = <Shift><Alt>s
+  resize_up = <Shift><Alt>k
+  resize_down = <Shift><Alt>j
+  resize_left = <Shift><Alt>h
+  resize_right = <Shift><Alt>l
+  move_tab_right = <Primary><Shift><Alt>Tab
+  move_tab_left = <Primary><Alt>Tab
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+  switch_to_tab_1 = <Primary>F1
+  switch_to_tab_2 = <Primary>F2
+  switch_to_tab_3 = <Primary>F3
+  switch_to_tab_4 = <Primary>F4
+  switch_to_tab_5 = <Primary>F5
+  switch_to_tab_6 = <Primary>F6
+  switch_to_tab_7 = <Primary>F7
+  switch_to_tab_8 = <Primary>F8
+  switch_to_tab_9 = <Primary>F9
+  switch_to_tab_10 = <Primary>F10
+  hide_window = None
+  group_all = <Shift><Super>g
+  ungroup_all = <Shift><Alt>g
+  ungroup_tab = <Shift><Alt>t
+  layout_launcher = <Shift><Alt>l
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#191922"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Fira Code 11
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#000000:#ff5555:#00ff88:#ffff88:#aa77ff:#ff88dd:#88ffff:#babdb6:#555753:#ff5555:#00ff88:#ffff88:#af88ff:#ff88dd:#88ffff:#eeeeec"
+    login_shell = True
+    custom_command = bash
+    use_system_font = False
+  [[New Profile]]
+    cursor_color = "#aaaaaa"
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
