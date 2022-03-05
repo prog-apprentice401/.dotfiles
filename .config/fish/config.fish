@@ -30,3 +30,5 @@ set fish_color_param brmagenta
 set PATH ~/bin/ $PATH
 
 colorscript -r
+
+cat ~/.config/i3/config.1 ~/.config/i3/config.2 > ~/.config/i3/config
