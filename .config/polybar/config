@@ -72,7 +72,7 @@ font-2 = Fira Code:pixelsize=10;1
 
 modules-left = mpd pulseaudio 
 modules-center = bspwm i3
-modules-right = filesystem-root filesystem-home battery memory cpu wlan temperature date 
+modules-right = filesystem-root filesystem-home battery date 
 
 tray-position = right
 tray-padding = 2
