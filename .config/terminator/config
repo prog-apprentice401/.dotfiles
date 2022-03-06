@@ -45,7 +45,7 @@
   group_all = <Shift><Super>g
   ungroup_all = <Shift><Alt>g
   ungroup_tab = <Shift><Alt>t
-  layout_launcher = <Shift><Alt>l
+  layout_launcher = <Primary><Alt>l
 [profiles]
   [[default]]
     allow_bold = False
