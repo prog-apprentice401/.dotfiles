@@ -38,7 +38,7 @@ foreground = #dd88dd
 foreground-alt = #555
 primary = #ffaaff
 secondary = #e60053
-alert = #e60053
+alert = #ff5555
 
 [bar/bar1]
 monitor = ${env:MONITOR}
@@ -72,7 +72,7 @@ font-2 = Fira Code:pixelsize=10;1
 
 modules-left = mpd pulseaudio 
 modules-center = bspwm i3
-modules-right = filesystem-root filesystem-home battery date 
+modules-right = filesystem-root filesystem-home battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -389,15 +389,15 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 70
 
 format = <label>
 format-underline = #8855dd
 format-warn = <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-underline = ${colors.alert}
 
-label = " %temperature-c% "
-label-warn = " %temperature-c% "
+label = " %temperature-c%"
+label-warn = " %temperature-c%"
 label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
