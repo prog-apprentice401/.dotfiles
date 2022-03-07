@@ -305,23 +305,23 @@ format-volume = "<label-volume> <bar-volume>"
 label-volume = "  vol:%percentage:3%%"
 label-volume-foreground = ${root.foreground}
 
-label-muted = "  vol:  0% █████████████████████████████ "
+label-muted = "  vol:  0% ⬤                       "
 label-muted-foreground = ${self.bar-volume-empty-foreground}
 
-bar-volume-width = 30
+bar-volume-width = 24
 bar-volume-foreground-0 = #50ff77
 bar-volume-foreground-1 = #60ff77
 bar-volume-foreground-2 = #70ff77
-bar-volume-foreground-3 = #aaff77
-bar-volume-foreground-4 = #fafa77
-bar-volume-foreground-5 = #f1aa66
+bar-volume-foreground-3 = #ccff77
+bar-volume-foreground-4 = #facc77
+bar-volume-foreground-5 = #f18866
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = true
-bar-volume-indicator = ┃
+bar-volume-indicator = ⬤
 bar-volume-indicator-font = 1
-bar-volume-fill = █
+bar-volume-fill = ─
 bar-volume-fill-font = 1
-bar-volume-empty = █
+bar-volume-empty = ─
 bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
