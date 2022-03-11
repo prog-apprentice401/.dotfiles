@@ -142,5 +142,24 @@ mkcd ()
 }
 
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-#to automatically generate an i3 config with the general and system-specific configuration
-cat ~/.config/i3/config.1 ~/.config/i3/config.2 > ~/.config/i3/config
+
+colorscript -r
+
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0282a36" #black
+    echo -en "\e]P8666666" #darkgrey
+    echo -en "\e]P1aa2222" #darkred
+    echo -en "\e]P9ff5555" #red
+    echo -en "\e]P230aa5b" #darkgreen
+    echo -en "\e]PA50fa7b" #green
+    echo -en "\e]P3D7AF87" #brown
+    echo -en "\e]PBf1fa8c" #yellow
+    echo -en "\e]P49966bb" #darkblue
+    echo -en "\e]PCbd93ff" #blue
+    echo -en "\e]P5aa5588" #darkmagenta
+    echo -en "\e]PDff79c6" #magenta
+    echo -en "\e]P666bbcc" #darkcyan
+    echo -en "\e]PE8be9fd" #cyan
+    echo -en "\e]P7E5E5E5" #lightgrey
+    echo -en "\e]PFdddddd" #white
+fi
