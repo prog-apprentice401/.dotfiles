@@ -76,7 +76,7 @@ modules-right = filesystem-root filesystem-home battery temperature date
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+#tray-background = #332233
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -86,8 +86,8 @@ tray-padding = 2
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -118,7 +118,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = " %{F#colors.foreground}root:%percentage_used%% "
+label-mounted = " root:%percentage_used%% "
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -128,7 +128,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = " %{F#colors.foreground}home:%percentage_used%% "
+label-mounted = " home:%percentage_used%% "
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -157,7 +157,7 @@ label-empty-padding = 2
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-index-sort = true
+index-sort = false
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
