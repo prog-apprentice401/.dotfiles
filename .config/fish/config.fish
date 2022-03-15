@@ -3,7 +3,7 @@ abbr python 'python3'
 abbr src 'source ~/.config/fish/config.fish'
 abbr chrc 'nvim ~/.config/fish/config.fish'
 abbr chvi 'nvim ~/.config/nvim/init.vim'
-abbr pray 'celluloid ~/Music/radhaKrishnaNaamawaliChant.mp3'
+abbr pray 'vlc ~/Music/radhaKrishnaNaamawaliChant.mp3'
 
 # abbr for git
 abbr gfetch 'git fetch'
