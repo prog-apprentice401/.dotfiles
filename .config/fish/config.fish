@@ -49,4 +49,6 @@ if test "$TERM" = "linux"
 	setfont ter-g18b
 	clear
 end
+
+source system-specific-config.fish
 colorscript -r
