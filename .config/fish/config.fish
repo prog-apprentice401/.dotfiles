@@ -1,8 +1,7 @@
-abbr nvim 'nvim -p'
+alias nvim 'nvim -p'
 abbr src 'source ~/.config/fish/config.fish'
 abbr chrc 'nvim ~/.config/fish/config.fish'
-abbr chvi 'nvim ~/.config/nvim/init.vim'
-abbr pray 'vlc ~/Music/radhaKrishnaNaamawaliChant.mp3'
+alias chvi 'nvim ~/.config/nvim/init.vim'
 
 # abbr for git
 abbr gfetch 'git fetch'
@@ -18,10 +17,13 @@ abbr gpush 'git push'
 abbr grem 'git remote'
 abbr gckt 'git checkout'
 abbr gclone 'git clone'
-abbr la 'ls -A'
+alias la 'ls -A'
 
-#abbr for managing dotfiles
+# alias for managing dotfiles
 alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
+
+# abbr for arduino-cli
+abbr ac arduino-cli
 
 set fish_error_color brred
 set fish_color_param brmagenta
@@ -49,4 +51,4 @@ if test "$TERM" = "linux"
 	setfont ter-g18b
 	clear
 end
-colorscript -r
+#colorscript -r

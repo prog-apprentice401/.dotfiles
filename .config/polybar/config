@@ -29,54 +29,63 @@
 ;==========================================================
 
 [colors]
+red = #ff5555
+orange = #ff8855
+purple = #ff88ff
+yellow = #f1fa8c
+green = #50fa7b
+blue = #8be9fd
+darkblue = #6677aa
+
 ;background = ${xrdb:color0:#222}
-background = #1e1f28
+background = #111111
 background-alt = #333344
 background-unfocused = #2a2a44
 ;foreground = ${xrdb:color7:#222}
-foreground = #dd88dd
-foreground-alt = #555
-primary = #ffaaff
+foreground = ${self.purple}
+foreground-alt = ${self.darkblue}
+primary = ${self.foreground}
 secondary = #e60053
-alert = #ff5555
+
+alert = ${self.red}
 
 [bar/bar1]
 monitor = ${env:MONITOR}
 width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 2.0
-fixed-center = false
+height = 20
+offset-x = 0%
+offset-y = 0%
+radius = 5
+fixed-center = true
 
-bottom = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #f00
+line-color = ${colors.foreground}
 
-border-size = 0
+border-size = 2
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Fira Code:pixelsize=10;1
-font-1 = Fira Code:fontformat=truetype:size=10:antialias=false;0
-font-2 = Fira Code:pixelsize=10;1
+font-0 = Fira Code:pixelsize=9;1
+font-1 = Fira Code:fontformat=truetype:size=9:antialias=false;0
+font-2 = Fira Code:pixelsize=9;1
 
 modules-left = mpd pulseaudio 
 modules-center = bspwm i3
 modules-right = filesystem-root filesystem-home battery temperature date
 
-tray-position = right
-tray-padding = 2
-#tray-background = #332233
+tray-position = left
+;tray-padding = 
+;tray-background = #332233
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -164,7 +173,7 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 1
-label-mode-foreground = #000
+label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -190,7 +199,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
-; label-separator = |
+ label-separator = 
 
 
 [module/mpd]
@@ -214,11 +223,11 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = ${colors.foreground}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -233,7 +242,7 @@ type = internal/cpu
 interval = 2
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8855dd
+format-underline = ${colors.foreground}
 label = " cpu:%percentage:2%% "
 
 [module/memory]
@@ -241,7 +250,7 @@ type = internal/memory
 interval = 2
 format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8855dd
+format-underline = ${colors.foreground}
 label = "  mem:%percentage_used:2%% "
 
 [module/wlan]
@@ -250,7 +259,7 @@ interface = wlp59s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.green}
 label-connected = %essid%
 
 format-disconnected =
@@ -294,7 +303,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8855dd
+format-underline = ${colors.foreground}
 
 label = " %time% "
 
@@ -305,19 +314,19 @@ format-volume = "<label-volume> <bar-volume>"
 label-volume = "  vol:%percentage:3%%"
 label-volume-foreground = ${root.foreground}
 
-label-muted = "  vol:  0% ⬤                            "
+label-muted = "  vol:  0% |"
 label-muted-foreground = ${self.bar-volume-empty-foreground}
 
 bar-volume-width = 29
-bar-volume-foreground-0 = #50ff77
-bar-volume-foreground-1 = #60ff77
-bar-volume-foreground-2 = #70ff77
-bar-volume-foreground-3 = #ccff77
-bar-volume-foreground-4 = #facc77
-bar-volume-foreground-5 = #f18866
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = ⬤
+bar-volume-foreground-0 = ${colors.foreground}
+bar-volume-foreground-1 = ${colors.foreground}
+bar-volume-foreground-2 = ${colors.foreground}
+bar-volume-foreground-3 = ${colors.foreground}
+bar-volume-foreground-4 = ${colors.foreground}
+bar-volume-foreground-5 = ${colors.foreground}
+bar-volume-foreground-6 = ${colors.foreground}
+bar-volume-gradient = false
+bar-volume-indicator = |
 bar-volume-indicator-font = 1
 bar-volume-fill = ─
 bar-volume-fill-font = 1
@@ -357,17 +366,17 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 99
 
 format-charging = "  chr:<label-charging> "
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.yellow}
 
 format-discharging = " bat:<label-discharging> "
-format-discharging-underline = ${self.format-underline}
+format-discharging-underline = ${colors.orange}
 
 format-full-prefix = " ful:"
 format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = #8855dd
+format-full-underline = ${colors.foreground}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -392,7 +401,7 @@ thermal-zone = 0
 warn-temperature = 70
 
 format = <label>
-format-underline = #8855dd
+format-underline = ${colors.foreground}
 format-warn = <label-warn>
 format-warn-underline = ${colors.alert}
 

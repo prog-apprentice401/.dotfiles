@@ -1,0 +1,54 @@
+# color theme for Alacritty
+
+colors:
+  primary:
+    background: '#111122'
+    foreground: '#dddddd'
+    bright_foreground: '#eeeeee'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '#44475a'
+      background: '#50fa7b'
+    focused_match:
+      foreground: '#44475a'
+      background: '#ffb86c'
+    bar:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+  hints:
+    start:
+      foreground: '#282a36'
+      background: '#f1fa8c'
+    end:
+      foreground: '#f1fa8c'
+      background: '#282a36'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '#393922'
+  normal:
+    black: '#292929'
+    red: '#ff3355'
+    green: '#69ff94'
+    yellow: '#ffdd38'
+    blue: '#9977ff'
+    magenta: '#ff6699'
+    cyan: '#a4ffff'
+    white: '#eeeeee'
+  bright:
+    black: '#292929'
+    red: '#ff3355'
+    green: '#69ff94'
+    yellow: '#ffdd38'
+    blue: '#9977ff'
+    magenta: '#ff6699'
+    cyan: '#a4ffff'
+    white: '#eeeeee'
