@@ -51,6 +51,6 @@ if test "$TERM" = "linux"
 	setfont ter-g18b
 	clear
 end
-source ./system-specific-config.fish
+source ~/.config/fish/system-specific-config.fish
 #colorscript -r
 colorscript -r
