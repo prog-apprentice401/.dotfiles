@@ -300,4 +300,4 @@ exec_always --no-startup-id guake
 exec_always --no-startup-id guake-toggle
 
 #starting applications by default on workspaces
-exec --no-startup-id i3-msg 'workspace $ws6; exec alacritty;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty;'

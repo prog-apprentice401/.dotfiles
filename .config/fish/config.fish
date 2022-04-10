@@ -19,6 +19,8 @@ abbr gckt 'git checkout'
 abbr gclone 'git clone'
 alias la 'ls -A'
 
+abbr s 'systemctl suspend'
+
 # alias for managing dotfiles
 alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
 

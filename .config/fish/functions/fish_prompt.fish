@@ -1,10 +1,29 @@
-# Defined in /home/koustubh/.config/fish/functions/fish_prompt.fish @ line 2
 function fish_prompt
-	set -l user_char \u276F
-	if test $status -eq 0
-		set prompt_dir_color brblue
-	else
-		set prompt_dir_color brred
-	end
-	echo (set_color $prompt_dir_color -o)(prompt_pwd)  (get_branch) \n(set_color grey -d)$user_char(set_color normal)' '
+    if test $status -eq 0
+        set error_status_color $fish_color_cwd
+    else
+        set error_status_color brred
+    end
+    if not set -q VIRTUAL_ENV_DISABLE_PROMPT
+        set -g VIRTUAL_ENV_DISABLE_PROMPT true
+    end
+    set_color brmagenta
+    printf '%s' $USER
+    set_color normal
+    printf ' in '
+
+    set_color $error_status_color
+    printf '%s' (prompt_pwd)
+    set_color normal
+
+    printf ' %s ' (get_branch)
+
+    # Line 2
+    echo
+    if test -n "$VIRTUAL_ENV"
+        printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)
+    end
+    set_color 999999
+    printf '↪ '
+    set_color normal
 end
