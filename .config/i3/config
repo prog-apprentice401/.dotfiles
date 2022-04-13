@@ -48,7 +48,6 @@ exec_always --no-startup-id nm-applet
 
 exec_always --no-startup-id sct 4600
 
-exec alacritty --title "Neovim" -e nvim; move [title="Neovim"] scratchpad
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
