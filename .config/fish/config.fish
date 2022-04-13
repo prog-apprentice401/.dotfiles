@@ -54,5 +54,5 @@ if test "$TERM" = "linux"
 	clear
 end
 source ~/.config/fish/system-specific-config.fish
-#colorscript -r
+
 colorscript -r
