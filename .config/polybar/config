@@ -52,7 +52,7 @@ alert = ${self.red}
 [bar/bar1]
 monitor = ${env:MONITOR}
 width = 100%
-height = 20
+height = 25
 offset-x = 0%
 offset-y = 0%
 radius = 5
@@ -83,7 +83,7 @@ modules-left = mpd pulseaudio
 modules-center = bspwm i3
 modules-right = filesystem-root filesystem-home battery temperature date
 
-tray-position = left
+;tray-position = left
 ;tray-padding = 
 ;tray-background = #332233
 
