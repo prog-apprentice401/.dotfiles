@@ -12,11 +12,13 @@
 focus_follows_mouse no
 set $mod Mod4
 
+
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 0
-gaps inner 7
+gaps inner 10
 gaps outer 0
+gaps top 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -75,7 +77,7 @@ bindsym $mod+e exec alacritty -e vifm
 bindsym $mod+g exec thunar
 
 #htop
-bindsym Control+Shift+Escape exec --no-startup-id alacritty -e htop
+bindsym $mod+x exec --no-startup-id alacritty -e htop
 
 #sound settings
 bindsym Control+$mod+s exec --no-startup-id alacritty -e alsamixer
@@ -293,7 +295,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.fehbg
 
 #starting picom
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backends
 
 #launching guake
 for_window [instance=guake] floating enable
@@ -301,4 +303,4 @@ exec_always --no-startup-id guake
 exec_always --no-startup-id guake-toggle
 
 #starting applications by default on workspaces
-exec --no-startup-id i3-msg 'workspace $ws6; exec alacritty;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec alacritty;'
