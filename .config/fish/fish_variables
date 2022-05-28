@@ -5,8 +5,6 @@ SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ac:arduino\x2dcli
-SETUVAR _fish_abbr_chrc:nvim\x20\x7e/\x2econfig/fish/config\x2efish
-SETUVAR _fish_abbr_chvi:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_gadd:git\x20add
 SETUVAR _fish_abbr_gbranch:git\x20branch
 SETUVAR _fish_abbr_gckt:git\x20checkout
@@ -21,7 +19,6 @@ SETUVAR _fish_abbr_grem:git\x20remote
 SETUVAR _fish_abbr_gstat:git\x20status
 SETUVAR _fish_abbr_gswitch:git\x20switch
 SETUVAR _fish_abbr_la:ls\x20\x2dA
-SETUVAR _fish_abbr_nvim:nvim\x20\x2dp
 SETUVAR _fish_abbr_pray:vlc\x20\x7e/Music/radhaKrishnaNaamawaliChant\x2emp3
 SETUVAR _fish_abbr_python:python3
 SETUVAR _fish_abbr_s:systemctl\x20suspend
@@ -50,7 +47,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline

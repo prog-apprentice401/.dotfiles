@@ -32,8 +32,8 @@ colors:
     foreground: None
     background: None
   selection:
-    text: CellForeground
-    background: '#393922'
+    text: CellBackground
+    background: CellForeground
   normal:
     black: '#111111'
     red: '#ff3355'
