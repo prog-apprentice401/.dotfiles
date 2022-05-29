@@ -5,6 +5,7 @@ SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ac:arduino\x2dcli
+SETUVAR _fish_abbr_chrc:nvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gadd:git\x20add
 SETUVAR _fish_abbr_gbranch:git\x20branch
 SETUVAR _fish_abbr_gckt:git\x20checkout
