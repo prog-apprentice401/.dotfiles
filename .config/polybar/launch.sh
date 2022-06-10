@@ -2,8 +2,9 @@
 
 # config for polybar
 
-# Terminate running instances
+# Terminate running instances if kill switch is given
 killall -q polybar
+
 # If all you bars have ipc enables, you can also use
 # polybar-msg cmd quit
 
