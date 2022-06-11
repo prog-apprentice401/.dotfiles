@@ -2,8 +2,8 @@
 
 colors:
   primary:
-    background: '#000000'
-    foreground: '#eeeeee'
+    background: '#060606'
+    foreground: '#dddddd'
     bright_foreground: '#ffffff'
   cursor:
     text: CellBackground
@@ -36,19 +36,19 @@ colors:
     background: CellForeground
   normal:
     black: '#111111'
-    red: '#ff3355'
-    green: '#69ff94'
-    yellow: '#ffdd38'
-    blue: '#9977ff'
-    magenta: '#ff6699'
-    cyan: '#a4ffff'
+    red: '#ed333b'
+    green: '#66aa33'
+    yellow: '#dad261'
+    blue: '#729fcf'
+    magenta: '#c07bc2'
+    cyan: '#89abd4'
     white: '#eeeeee'
   bright:
     black: '#111111'
-    red: '#ff3355'
-    green: '#69ff94'
-    yellow: '#ffdd38'
-    blue: '#9977ff'
-    magenta: '#ff6699'
-    cyan: '#a4ffff'
+    red: '#f66151'
+    green: '#88dd44'
+    yellow: '#ffff61'
+    blue: '#aabbff'
+    magenta: '#dd88dd'
+    cyan: '#99bbdd'
     white: '#eeeeee'

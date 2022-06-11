@@ -4,20 +4,20 @@ function fish_default_mode_prompt --description 'Display vi prompt mode'
         or test "$fish_key_bindings" = fish_hybrid_key_bindings
         switch $fish_bind_mode
             case default
-                set_color --bold red
-                echo ' '
+                set_color --bold yellow
+                echo '🙐'
             case insert
-                set_color --bold green
-                echo ' '
+                set_color --bold blue
+                echo ''
             case replace_one
                 set_color --bold green
-                echo ' '
+                echo ''
             case replace
                 set_color --bold cyan
-                echo ' '
+                echo ''
             case visual
                 set_color --bold magenta
-                echo ' '
+                echo ''
         end
         set_color normal
         echo -n ' '
