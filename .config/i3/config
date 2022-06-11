@@ -64,6 +64,8 @@ bindsym $mod+F1 exec --no-startup-id i3-input
 
 #LAUNCHERS-----------------
 
+#parole media player
+bindsym $mod+p exec --no-startup-id parole
 #terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
@@ -279,11 +281,11 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-set $bgcolor #2F343F
-set $ibgcolor #2A2A2A
-set $textcolor #F3F4F5
-set $itextcolor #676E7D
-set $ubgcolor #E53539
+set $bgcolor #11002299
+set $ibgcolor #11002244
+set $textcolor #cc9999ff
+set $itextcolor #cc999999
+set $ubgcolor #E5353999
 
 #window color
 #			border		background	text		indicator
