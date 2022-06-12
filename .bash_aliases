@@ -1,9 +1,9 @@
 alias vim='vim -p'
 alias python='python3.9'
 alias src='source ~/.bashrc'
-alias chal='vim ~/.bash_aliases'
-alias chrc='vim ~/.bashrc'
-alias chvi='vim ~/.vimrc'
+alias chal='nvim ~/.bash_aliases'
+alias chrc='nvim ~/.bashrc'
+alias chvi='nvim ~/.vimrc'
 alias pray='celluloid ~/Music/radhaKrishnaNaamawaliChant.mp3'
 
 # alias for git
