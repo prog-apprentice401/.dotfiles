@@ -4,7 +4,7 @@ colors:
   primary:
     background: '#060606'
     foreground: '#dddddd'
-    bright_foreground: '#ffffff'
+    bright_foreground: '#eeeeee'
   cursor:
     text: CellBackground
     cursor: CellForeground
@@ -35,20 +35,20 @@ colors:
     text: CellBackground
     background: CellForeground
   normal:
-    black: '#111111'
-    red: '#ed333b'
-    green: '#66aa33'
-    yellow: '#dad261'
-    blue: '#729fcf'
-    magenta: '#c07bc2'
-    cyan: '#89abd4'
-    white: '#eeeeee'
+    black: '#000000'
+    red: '#dd2211'
+    green: '#449922'
+    yellow: '#cccc33'
+    blue: '#5577bb'
+    magenta: '#aa44aa'
+    cyan: '#55aaaa'
+    white: '#bbbbbb'
   bright:
     black: '#111111'
-    red: '#f66151'
+    red: '#ff6655'
     green: '#88dd44'
-    yellow: '#ffff61'
+    yellow: '#ffff44'
     blue: '#aabbff'
     magenta: '#dd88dd'
-    cyan: '#99bbdd'
+    cyan: '#77ffff'
     white: '#eeeeee'
