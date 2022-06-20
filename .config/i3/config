@@ -16,7 +16,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 0
-gaps inner 10
+gaps inner 2
 gaps outer 0
 gaps top 0
 gaps bottom 0
@@ -55,10 +55,23 @@ exec_always --no-startup-id sct 4600
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3stat
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+bindsym $mod+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+u exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+o exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+bindsym $mod+Control+i exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym $mod+Control+u exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym $mod+m exec --no-startup-id brightnessctl set +5%
+bindsym $mod+n exec --no-startup-id brightnessctl set 5%-
+
+bindsym $mod+Control+m exec --no-startup-id brightnessctl set +1%
+bindsym $mod+Control+n exec --no-startup-id brightnessctl set 1%-
 
 bindsym $mod+F1 exec --no-startup-id i3-input
 
@@ -86,7 +99,7 @@ bindsym $mod+x exec --no-startup-id alacritty -e htop
 bindsym Control+$mod+s exec --no-startup-id alacritty -e alsamixer
 
 #neovim
-bindsym $mod+n exec --no-startup-id alacritty --title "Neovim" -e nvim
+bindsym $mod+Shift+n exec --no-startup-id alacritty --title "Neovim" -e nvim
 
 #connection editor
 bindsym $mod+w exec --no-startup-id alacritty -e nmtui
@@ -160,7 +173,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+m focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -313,7 +326,7 @@ client.urgent		$ubgcolor	$ubgcolor	$textcolor	#444444
 exec_always --no-startup-id ~/.config/polybar/launch.sh -k
 
 # set background
-exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id /usr/bin/feh --nofehbg --bg-fill ~/.wallpaper
 
 # starting picom
 exec --no-startup-id picom --experimental-backends

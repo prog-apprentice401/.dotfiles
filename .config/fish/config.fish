@@ -50,7 +50,7 @@ if test "$TERM" = "linux"
 	echo -en "\e]P7E5E5E5" #lightgrey
 	echo -en "\e]PFdddddd" #white
 
-	setfont ter-g18b
+	setfont ter-g16b
 	clear
 end
 
