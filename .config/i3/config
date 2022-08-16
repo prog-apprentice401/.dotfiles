@@ -16,7 +16,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 0
-gaps inner 3
+gaps inner 7
 gaps outer 2
 gaps top 2
 gaps bottom 2
@@ -96,7 +96,7 @@ bindsym $mod+g exec thunar
 bindsym $mod+x exec --no-startup-id alacritty -e htop
 
 #sound settings
-bindsym Control+$mod+s exec --no-startup-id alacritty -e alsamixer
+bindsym $mod+Control+s exec --no-startup-id alacritty -e alsamixer
 
 #neovim
 bindsym $mod+Shift+n exec --no-startup-id alacritty --title "Neovim" -e nvim
