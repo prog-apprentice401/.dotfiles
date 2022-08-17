@@ -326,7 +326,7 @@ client.urgent		$ubgcolor	$ubgcolor	$textcolor	#444444
 exec_always --no-startup-id ~/.config/polybar/launch.sh -k
 
 # set background
-exec_always --no-startup-id /usr/bin/feh --nofehbg --bg-fill ~/.wallpaper
+exec nitrogen --restore
 
 # starting picom
 exec --no-startup-id picom --experimental-backends

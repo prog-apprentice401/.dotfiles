@@ -5,7 +5,7 @@ function fish_default_mode_prompt --description 'Display vi prompt mode'
         switch $fish_bind_mode
             case default
                 set_color --bold yellow
-                echo ''
+                echo ''
             case insert
                 set_color --bold blue
                 echo ''
@@ -17,7 +17,7 @@ function fish_default_mode_prompt --description 'Display vi prompt mode'
                 echo ''
             case visual
                 set_color --bold magenta
-                echo 濾
+                echo ''
         end
         set_color normal
         echo -n ' '
