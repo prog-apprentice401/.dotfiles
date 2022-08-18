@@ -87,7 +87,7 @@ bindsym $mod+b exec brave --profile-directory=Default
 bindsym $mod+Shift+b exec brave --profile-directory=Profile\ 3
 
 #file manager
-bindsym $mod+e exec alacritty -e vifm
+bindsym $mod+e exec alacritty -e ranger
 
 #gui file manager
 bindsym $mod+g exec thunar

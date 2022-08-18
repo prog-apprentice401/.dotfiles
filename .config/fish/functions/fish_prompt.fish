@@ -19,6 +19,6 @@ function fish_prompt
         printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)
     end
     set_color 999999
-    printf ' ↳ '
+    printf ' ⤷ '
     set_color normal
 end
