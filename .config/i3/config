@@ -43,7 +43,7 @@ bindsym --release --whole-window $mod+button3 floating toggle
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
-bindsym --release Shift+Control+$mod+l exec --no-startup-id ~/bin/lockscreen
+bindsym --release Shift+Control+$mod+l exec --no-startup-id i3lock -i ~/.config/i3/lockscreenbg.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -280,10 +280,10 @@ bindsym $mod+r mode "resize"
 set $mode_system Power Control
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/bin/lockscreen, mode "default"
+    bindsym l exec --no-startup-id i3lock -i ~/.config/i3/lockscreenbg.png, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id ~/bin/lockscreen && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id ~/bin/lockscreen && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id i3lock -i ~/.config/i3/lockscreenbg.png && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id i3lock -i ~/.config/i3/lockscreenbg.png && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -326,7 +326,7 @@ client.urgent		$ubgcolor	$ubgcolor	$textcolor	#444444
 exec_always --no-startup-id ~/.config/polybar/launch.sh -k
 
 # set background
-exec nitrogen --restore
+exec_always feh --bg-fill ~/.wallpaper
 
 # starting picom
 exec --no-startup-id picom --experimental-backends

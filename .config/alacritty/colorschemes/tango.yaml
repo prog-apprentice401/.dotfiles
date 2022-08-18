@@ -2,7 +2,7 @@
 
 colors:
   primary:
-    background: '#090a02'
+    background: '#001104'
     foreground: '#dddddd'
     bright_foreground: '#eeeeee'
   cursor:
