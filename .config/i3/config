@@ -15,11 +15,11 @@ set $mod Mod4
 
 floating_modifier $mod
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 gaps inner 7
-gaps outer 2
-gaps top 2
-gaps bottom 2
+gaps outer 0
+gaps top 0
+gaps bottom 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -294,18 +294,18 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-set $bgcolor #11002299
-set $ibgcolor #11002244
-set $textcolor #cc9999ff
-set $itextcolor #cc999999
+set $bgcolor #9fb92a88
+set $ibgcolor #9fb92a44
+set $textcolor #ffff99dd
+set $itextcolor #e0d67899
 set $ubgcolor #E5353999
 
 #window color
 #			border		background	text		indicator
-client.focused		$bgcolor	$bgcolor	$textcolor	#444444
-client.unfocused	$ibgcolor	$ibgcolor	$itextcolor	#444444
-client.focused_inactive	$ibgcolor	$ibgcolor	$itextcolor	#444444
-client.urgent		$ubgcolor	$ubgcolor	$textcolor	#444444
+client.focused		$bgcolor	$bgcolor	$textcolor	$bgcolor
+client.unfocused	$ibgcolor	$ibgcolor	$itextcolor	$ibgcolor
+client.focused_inactive	$ibgcolor	$ibgcolor	$itextcolor	$ibgcolor
+client.urgent		$ubgcolor	$ubgcolor	$textcolor	$ubgcolor
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

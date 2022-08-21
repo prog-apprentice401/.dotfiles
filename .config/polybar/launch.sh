@@ -1,9 +1,12 @@
-#! /usr/bin/env bash
+#! /bin/bash
 
 # config for polybar
 
 # Terminate running instances if kill switch is given
-killall -q polybar
+if [ "$1" = "-k" ]; then
+	killall -q polybar
+	echo "killing previous bars"
+fi
 
 # If all you bars have ipc enables, you can also use
 # polybar-msg cmd quit

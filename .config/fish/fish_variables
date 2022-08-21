@@ -26,9 +26,9 @@ SETUVAR _fish_abbr_s:systemctl\x20suspend
 SETUVAR _fish_abbr_src:source\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR fish_color_autosuggestion:5f5f5f
 SETUVAR fish_color_cancel:\x2d\x2dreverse
-SETUVAR fish_color_command:brblue
+SETUVAR fish_color_command:brgreen
 SETUVAR fish_color_comment:949494
-SETUVAR fish_color_cwd:brblue
+SETUVAR fish_color_cwd:brgreen
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_end:af005f
 SETUVAR fish_color_error:brred

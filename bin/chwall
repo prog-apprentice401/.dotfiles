@@ -1,5 +1,5 @@
 #!/bin/bash
 
 ln -sf "$1" ~/.wallpaper
-feh --no-fehbg --bg-fill ~/.wallpaper
 convert "$1" -scale '1366x768^' -gravity Center -extent 1366x768 -blur 20x10 ~/.config/i3/lockscreenbg.png
+feh --no-fehbg --bg-fill ~/.wallpaper

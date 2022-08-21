@@ -46,8 +46,8 @@ colors:
   bright:
     black: '#111111'
     red: '#ff6655'
-    green: '#88dd44'
-    yellow: '#ffff44'
+    green: '#87d787'
+    yellow: '#d9dd64'
     blue: '#aabbff'
     magenta: '#dd88dd'
     cyan: '#77ffff'
