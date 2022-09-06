@@ -15,11 +15,11 @@ set $mod Mod4
 
 floating_modifier $mod
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 gaps inner 7
 gaps outer 0
 gaps top 0
-gaps bottom 0
+gaps bottom 3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -294,8 +294,8 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-set $bgcolor #9fb92a88
-set $ibgcolor #9fb92a44
+set $bgcolor #a8231eaa
+set $ibgcolor #440505aa
 set $textcolor #ffff99dd
 set $itextcolor #e0d67899
 set $ubgcolor #E5353999
