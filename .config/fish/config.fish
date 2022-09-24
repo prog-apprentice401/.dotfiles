@@ -19,16 +19,11 @@ abbr gckt 'git checkout'
 abbr gclone 'git clone'
 alias la 'ls -A'
 
-abbr s 'systemctl suspend'
-
 # alias for managing dotfiles
 alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
 
 # abbr for arduino-cli
 abbr ac arduino-cli
-
-set fish_error_color brred
-set fish_color_param brmagenta
 
 set PATH ~/bin/ $PATH
 
@@ -55,5 +50,3 @@ if test "$TERM" = "linux"
 end
 
 source ~/.config/fish/system-specific-config.fish
-
-colorscript -r

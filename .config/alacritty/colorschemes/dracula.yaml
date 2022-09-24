@@ -9,7 +9,7 @@
 
 colors:
   primary:
-    background: '#282a36'
+    background: '#020510'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:
@@ -55,7 +55,7 @@ colors:
     red: '#ff6e6e'
     green: '#69ff94'
     yellow: '#ffffa5'
-    blue: '#d6acff'
+    blue: '#59c2ff'
     magenta: '#ff92df'
-    cyan: '#a4ffff'
+    cyan: '#88eeff'
     white: '#ffffff'
