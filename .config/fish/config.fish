@@ -25,7 +25,7 @@ alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
 # abbr for arduino-cli
 abbr ac arduino-cli
 
-set PATH ~/bin/ $PATH
+set -a PATH ~/bin/
 
 if test "$TERM" = "linux"
 	echo -en "\e]P0111111" #black
