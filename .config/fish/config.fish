@@ -50,3 +50,4 @@ if test "$TERM" = "linux"
 end
 
 source ~/.config/fish/system-specific-config.fish
+cal
