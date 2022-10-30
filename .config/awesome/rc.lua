@@ -55,10 +55,10 @@ local dpi = xresources.apply_dpi
 
 -- Default applications
 -- terminal = "xterm"
-terminal = "exo-open --launch TerminalEmulator"
-web_browser = "exo-open --launch WebBrowser"
-file_manager = "exo-open --launch FileManager"
-editor = os.getenv("EDITOR") or "nano"
+terminal = "exo-open --launch alacritty"
+web_browser = "exo-open --launch brave --profile-directory=Default"
+file_manager = "exo-open --launch alacritty -e ranger"
+editor = os.getenv("EDITOR") or "nvim"
 -- editor_cmd = terminal .. " -e " .. editor
 editor_cmd = "exo-open "
 -- Duckduckgo
