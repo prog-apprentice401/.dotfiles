@@ -20,6 +20,6 @@ function fish_default_mode_prompt --description 'Display vi prompt mode'
                 echo ''
         end
         set_color normal
-        echo -n ' '
+        echo -n '  '
     end
 end
