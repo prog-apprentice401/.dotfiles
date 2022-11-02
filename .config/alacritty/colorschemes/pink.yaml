@@ -18,9 +18,9 @@ colors:
     focused_match:
       foreground: '#44475a'
       background: '#ffb86c'
-    bar:
-      background: '#282a36'
-      foreground: '#f8f8f2'
+  footer_bar:
+    background: '#282a36'
+    foreground: '#f8f8f2'
   hints:
     start:
       foreground: '#282a36'
@@ -35,20 +35,20 @@ colors:
     text: CellBackground
     background: CellForeground
   normal:
-    black: '#000000'
-    red: '#aa0505'
-    green: '#11aa33'
-    yellow: '#ddbb66'
-    blue: '#2266dd'
-    magenta: '#bb1144'
-    cyan: '#03bbaa'
-    white: '#eeeeee'
+    black: '#21222c'
+    red: '#ff5555'
+    green: '#50fa7b'
+    yellow: '#f1fa8c'
+    blue: '#28aacc'
+    magenta: '#ff79c6'
+    cyan: '#8be9fd'
+    white: '#f8f8f2'
   bright:
-    black: '#111111'
-    red: '#de2a29'
-    green: '#55cc88'
-    yellow: '#fada86'
-    blue: '#5ec5d8'
-    magenta: '#ff4477'
-    cyan: '#12ddcc'
-    white: '#eeeeee'
+    black: '#6272a4'
+    red: '#ff6e6e'
+    green: '#69ff94'
+    yellow: '#ffffa5'
+    blue: '#66ccff'
+    magenta: '#ff92df'
+    cyan: '#88eeff'
+    white: '#ffffff'

@@ -16,7 +16,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 0
-gaps inner 2
+gaps inner 3
 gaps outer 1
 gaps top 1
 gaps bottom 1
