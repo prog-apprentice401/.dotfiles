@@ -49,7 +49,7 @@ function fish_prompt
                 echo hg
                 return 0
             else if _is_git_repo
-                echo git
+                echo "git"
                 return 0
             end
             return 1
@@ -78,8 +78,8 @@ function fish_prompt
 
     set -l repo_info
     if set -l repo_type (_repo_type)
-        set -l repo_branch $red(_repo_branch_name $repo_type)
-        set repo_info "$blue $repo_type:($repo_branch$blue)"
+        set -l repo_branch $yellow(_repo_branch_name $repo_type)
+        set repo_info "$yellow  $repo_branch$blue"
 
         if _is_repo_dirty $repo_type
             set -l dirty "$yellow ✗ "
@@ -88,4 +88,5 @@ function fish_prompt
     end
 
     echo -e -n -s $cwd $repo_info $normal'\n'$arrow' '
+    set_color normal
 end
