@@ -74,7 +74,7 @@ function fish_prompt
         set arrow "$arrow_color# "
     end
 
-    set -l cwd (set_color $fish_color_cwd)(basename (prompt_pwd))
+    set -l cwd (set_color $fish_color_cwd)(prompt_pwd)
 
     set -l repo_info
     if set -l repo_type (_repo_type)

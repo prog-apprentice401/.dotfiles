@@ -44,7 +44,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
 bindsym --release Shift+Control+$mod+l exec --no-startup-id i3lock -i ~/.config/i3/lockscreenbg.png
 
 # start the autotiling script
-exec_always --no-startup-id autotiling
+#exec_always --no-startup-id autotiling
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
