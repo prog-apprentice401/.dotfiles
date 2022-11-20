@@ -198,11 +198,11 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "left", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
-        layout = wibox.layout.align.vertical,
+        layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mylayoutbox,
@@ -230,7 +230,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-	awful.key ({ modkey, }, "s",
+	awful.key ({ modkey, "Shift" }, "s",
 		hotkeys_popup.show_help,
 		{description="show help", group="awesome"}
 	),
@@ -386,16 +386,43 @@ globalkeys = gears.table.join(
 		{description = "quit awesome", group = "awesome"}
 	),
 
+-------- Screenshots
+	awful.key({ }, "Print",
+		function ()
+			awful.spawn.with_shell ("scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'")
+		end,
+		{description = "copy screenshot", group = "utils"}
+	),
+	awful.key({ "Shift" }, "Print",
+		function ()
+			awful.spawn.with_shell ("scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'")
+		end,
+		{description = "copy screen selection", group = "utils"}
+	),
+
+	
+	awful.key({ modkey, }, "Print",
+		function ()
+			awful.spawn.with_shell ("scrot '/home/koustubh/Pictures/Screenshots/%b%d_%H%M%S.png'")
+		end,
+		{description = "save screenshot", group = "utils"}
+	),
+	awful.key({ modkey, "Shift" }, "Print",
+		function ()
+			awful.spawn.with_shell ("scrot -s '/home/koustubh/Pictures/Screenshots/%b%d_%H%M%S.png'")
+		end,
+		{description = "save screen selection", group = "utils"}
+	),
 -------- Launchers
 	awful.key({ modkey, }, "b",
 		function ()
-			awful.spawn.with_shell ("brave --profile-directory=Default")
+			awful.spawn ("brave --profile-directory=Default")
 		end,
 		{description = "Launch Brave (default directory)", group = "programs"}
 	),
 	awful.key({ modkey, }, "z",
 		function ()
-			awful.spawn.with_shell ("zathura")
+			awful.spawn ("zathura")
 		end,
 		{description = "Launch Zathura", group = "programs"}
 	),
@@ -404,6 +431,13 @@ globalkeys = gears.table.join(
 			awful.spawn (terminal .. " -e " .. "ranger")
 		end,
 		{description = "Launch Ranger", group = "programs"}
+	),
+	awful.key({ modkey, }, "t",
+		function ()
+			awful.spawn ("thunar")
+		end,
+		{description = "Launch Thunar", group = "programs"}
+		
 	),
 	awful.key({ modkey, }, "s",
 		function ()
@@ -421,27 +455,45 @@ globalkeys = gears.table.join(
 		function ()
 			awful.spawn (editor_cmd)
 		end,
-		{description = "Launch Htop", group = "programs"}
+		{description = "Launch Neovim", group = "programs"}
+	),
+	awful.key({ modkey, }, "n",
+		function ()
+			awful.spawn (terminal .. ' -e ' .. "nmtui")
+		end,
+		{description = "Launch Nmtui", group = "programs"}
+	),
+	awful.key({ modkey, }, "p",
+		function ()
+			awful.spawn ("parole")
+		end,
+		{description = "Launch Parole", group = "programs"}
+	),
+	awful.key({ modkey, }, "c",
+		function ()
+			awful.spawn (terminal .. ' -e ' .. "cmus")
+		end,
+		{description = "Launch Parole", group = "programs"}
 	),
 
 -------- Sound Control
 	awful.key({ modkey, }, "i",
 		function ()
-			awful.spawn ("pactl set-sink-volume @DEFAULT_SINK@ +5")
+			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ +5")
 		end,
-		{description = "Launch Htop", group = "programs"}
+		{description = "increase volume", group = "sound"}
 	),
 	awful.key({ modkey, }, "u",
 		function ()
-			awful.spawn ("pactl set-sink-volume @DEFAULT_SINK@ -5")
+			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ -5")
 		end,
-		{description = "Launch Htop", group = "programs"}
+		{description = "decrease volume", group = "sound"}
 	),
 	awful.key({ modkey, }, "o",
 		function ()
-			awful.spawn ("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+			awful.spawn.with_shell ("pactl set-sink-mute @DEFAULT_SINK@ toggle")
 		end,
-		{description = "Launch Htop", group = "programs"}
+		{description = "toggle mute", group = "sound"}
 	),
 
 
@@ -452,7 +504,7 @@ globalkeys = gears.table.join(
 		end,
 		{description = "run prompt", group = "launcher"}
 	),
-	awful.key({ modkey, "Shift", },"x",
+	awful.key({ modkey, "Shift", }, "x",
 		function ()
 			awful.prompt.run {
 				prompt       = "Run Lua code: ",
@@ -461,14 +513,15 @@ globalkeys = gears.table.join(
 				history_path = awful.util.get_cache_dir() .. "/history_eval"
 			}
 	          end,
-	          {description = "lua execute prompt", group = "awesome"}),
--------- Menubar
-	awful.key({ modkey }, "p",
-		function()
-			menubar.show()
-		end,
-		{description = "show the menubar", group = "launcher"}
+	          {description = "lua execute prompt", group = "awesome"}
 	)
+-------- Menubar
+	--awful.key({ modkey }, "p",
+	--	function()
+	--		menubar.show()
+	--	end,
+	--	{description = "show the menubar", group = "launcher"}
+	--)
 )
 
 clientkeys = gears.table.join(
