@@ -18,6 +18,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+require("collision")()
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -73,9 +74,9 @@ awful.layout.layouts = {
     -- awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.se,
-    awful.layout.suit.corner.sw,
+    --awful.layout.suit.corner.ne,
+    --awful.layout.suit.corner.se,
+    --awful.layout.suit.corner.sw,
     awful.layout.suit.floating,
 }
 -- }}}
@@ -171,8 +172,12 @@ awful.screen.connect_for_each_screen(function(s)
     --set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 "}, s, awful.layout.layouts[1])
-
+    if s.index == 1 then
+    	awful.tag({ "", "", "", " 4 " }, s, awful.layout.layouts[1])
+    end
+    if s.index == 2 then
+    	awful.tag({ " 1 ", " 2 ", " 3 ", " 4 " }, s, awful.layout.layouts[1])
+    end
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -205,7 +210,6 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
             s.mytaglist,
             -- s.mypromptbox,
         },
@@ -216,6 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
             --wibox.widget.systray(),
             mytextclock,
         },
+        s.mylayoutbox,
     }
 end)
 -- }}}
@@ -241,11 +246,11 @@ globalkeys = gears.table.join(
 		{description = "show main menu", group = "awesome"}
 	),
 
-	awful.key({ modkey, }, "Left",
+	awful.key({ modkey, "Control", }, "j",
 		awful.tag.viewprev,
 		{description = "view previous", group = "tag"}
 	),
-	awful.key({ modkey, }, "Right", 
+	awful.key({ modkey, "Control", }, "k", 
 		awful.tag.viewnext,
 		{description = "view next", group = "tag"}
 	),
@@ -281,11 +286,11 @@ globalkeys = gears.table.join(
 		end,
 		{description = "swap with previous client by index", group = "client"}
 	),
-	awful.key({ modkey, }, "u",
+	awful.key({ modkey, "Shift" }, "u",
 		awful.client.urgent.jumpto,
 		{description = "jump to urgent client", group = "client"}
 	),
-	awful.key({ modkey, }, "Tab",
+	awful.key({ modkey, "Shift" }, "p",
 		function ()
 			awful.client.focus.history.previous()
 			if client.focus then
@@ -344,13 +349,13 @@ globalkeys = gears.table.join(
 		end,
 		{description = "decrease the number of columns", group = "layout"}
 	),
-	awful.key({ modkey,           }, "space",
+	awful.key({ modkey, }, "Tab",
 		function ()
 			awful.layout.inc( 1)
 		end,
 		{description = "select next", group = "layout"}
 	),
-	awful.key({ modkey, "Shift"   }, "space",
+	awful.key({ modkey, "Shift" }, "Tab",
 		function ()
 			awful.layout.inc(-1)
 		end,
@@ -384,6 +389,14 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, "Shift" }, "e",
 		awesome.quit,
 		{description = "quit awesome", group = "awesome"}
+	),
+
+-------- Misc
+	awful.key({ modkey, "Shift", "Control"}, "l",
+		function ()
+			awful.spawn.with_shell ("i3lock -i ~/.config/lockscreenbg.png -t")
+		end,
+		{ description = "lockscreen", group = "misc" }
 	),
 
 -------- Screenshots
@@ -479,13 +492,13 @@ globalkeys = gears.table.join(
 -------- Sound Control
 	awful.key({ modkey, }, "i",
 		function ()
-			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ +5")
+			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ +5%")
 		end,
 		{description = "increase volume", group = "sound"}
 	),
 	awful.key({ modkey, }, "u",
 		function ()
-			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ -5")
+			awful.spawn.with_shell ("pactl set-sink-volume @DEFAULT_SINK@ -5%")
 		end,
 		{description = "decrease volume", group = "sound"}
 	),
@@ -538,7 +551,7 @@ clientkeys = gears.table.join(
 		end,
 		{description = "close", group = "client"}
 	),
-	awful.key({ modkey, "Shift" }, "space",
+	awful.key({ modkey, }, "space",
 		awful.client.floating.toggle,
 		{description = "toggle floating", group = "client"}
 	),
@@ -560,7 +573,7 @@ clientkeys = gears.table.join(
 		end,
 		{description = "toggle keep on top", group = "client"}
 	),
-	awful.key({ modkey, }, "n",
+	awful.key({ modkey, }, "-",
 	    function (c)
 	        -- The client currently has the input focus, so it cannot be
 	        -- minimized, since minimized clients can't have the focus.
@@ -582,7 +595,7 @@ clientkeys = gears.table.join(
 		end ,
 		{description = "(un)maximize vertically", group = "client"}
 	),
-	awful.key({ modkey, "Shift"   }, "m",
+	awful.key({ modkey, "Shift" }, "m",
 		function (c)
 			c.maximized_horizontal = not c.maximized_horizontal
 			c:raise()
@@ -686,20 +699,10 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			instance = {
-				"DTA",  -- Firefox addon DownThemAll.
-				"copyq",  -- Includes session name in class.
 				"pinentry",
 			},
 			class = {
-				"Arandr",
-				"Blueman-manager",
-				"Gpick",
-				"Kruler",
-				"MessageWin",  -- kalarm.
-				"Sxiv",
 				"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-				"Wpa_gui",
-				"veromix",
 				"xtightvncviewer",
 				"Guake",
 			},
@@ -707,12 +710,10 @@ awful.rules.rules = {
 	        	-- Note that the name property shown in xprop might be set slightly after creation of the client
 	        	-- and the name shown there might not match defined rules here.
 			name = {
-				"Event Tester",  -- xev.
 				"Guake Preferences",
+				"Character Map",
 			},
 			role = {
-				"AlarmWindow",  -- Thunderbird's calendar.
-				"ConfigManager",  -- Thunderbird's about:config.
 				"pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
 			}
 		}, 
@@ -725,6 +726,16 @@ awful.rules.rules = {
 			type = { "normal", "dialog" }
 		},
 		properties = { titlebars_enabled = false }
+	},
+
+	-- Mapping programs to screens and tags
+	{
+		rule = { class = "Brave-browser" },
+		properties = { screen = 2, tag = " 1 " }
+	},
+	{
+		rule = { class = "Zathura" },
+		properties = { screen = 2, tag = " 2 " }
 	},
 
     -- Set Firefox to always map on the tag named "2" on screen 1.

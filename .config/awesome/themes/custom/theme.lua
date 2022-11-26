@@ -9,6 +9,7 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 --local themes_path = gfs.get_themes_dir()
 local themes_path = "~/.config/awesome/themes/custom/" 
+local gears = require("gears")
 
 local theme = {}
 
@@ -25,8 +26,8 @@ theme.fg_focus      = "#fdcac2"
 theme.fg_urgent     = "#ff5555"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(2)
-theme.border_width  = dpi(2)
+theme.useless_gap   = dpi(3)
+theme.border_width  = dpi(0)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
@@ -44,6 +45,8 @@ theme.border_marked = "#91231c"
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
+theme.tasklist_shape = gears.shape.rounded_rect
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(0)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
@@ -52,6 +55,11 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
+
+theme.taglist_font = "Symbols Nerd Font 12"
+theme.taglist_spacing = 0
+theme.taglist_shape = gears.shape.circle
+theme.taglist_fg_empty = "#888888"
 
 -- Variables set for theming notifications:
 -- notification_font
