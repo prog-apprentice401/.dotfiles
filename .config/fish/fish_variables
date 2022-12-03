@@ -6,6 +6,7 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ac:arduino\x2dcli
 SETUVAR _fish_abbr_chrc:nvim\x20\x7e/\x2econfig/fish/config\x2efish
+SETUVAR _fish_abbr_chvi:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_gadd:git\x20add
 SETUVAR _fish_abbr_gbranch:git\x20branch
 SETUVAR _fish_abbr_gckt:git\x20checkout
@@ -47,6 +48,7 @@ SETUVAR fish_color_selection:\x2d\x2dbackground\x3dE6B450
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_cursor_insert:block\x1eblink
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_background:\x1d

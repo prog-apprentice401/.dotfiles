@@ -1,7 +1,7 @@
 alias nvim 'nvim -p'
 abbr src 'source ~/.config/fish/config.fish'
 abbr chrc 'nvim ~/.config/fish/config.fish'
-alias chvi 'nvim ~/.config/nvim/init.vim'
+abbr chvi 'nvim ~/.config/nvim/init.vim'
 
 # abbr for git
 abbr gfetch 'git fetch'
@@ -17,8 +17,8 @@ abbr gpush 'git push'
 abbr grem 'git remote'
 abbr gckt 'git checkout'
 abbr gclone 'git clone'
+
 alias la 'ls -A'
-alias rm 'trash'
 
 # alias for managing dotfiles
 alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'

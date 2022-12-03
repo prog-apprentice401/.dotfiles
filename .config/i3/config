@@ -2,20 +2,26 @@ focus_follows_mouse no
 set $mod Mod4
 floating_modifier $mod
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 gaps inner 2
-gaps outer 2
+gaps outer 1
 gaps top 1
-gaps bottom 2
+gaps bottom 1
 
 # Font for window titles
-font pango: Ubuntu 9
+font pango: Iosevka 9
 
 title_align center
+for_window [class=".*"] title_format "%class: %title"
 default_orientation auto
 workspace_auto_back_and_forth no
+
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+
+for_window [title="notepad"] floating enable, sticky enable
+
+bindsym $mod+Shift+q [title="notepad"] scratchpad show
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -25,8 +31,8 @@ bindsym $mod+minus scratchpad show
 exec --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
 bindsym --release Shift+Control+$mod+l exec --no-startup-id i3lock -t -i ~/.config/lockscreenbg.png
 
-set $bgcolor #66ccffaa
-set $ibgcolor #44aadd55
+set $bgcolor #aa6666
+set $ibgcolor #553333
 set $textcolor #ffff99dd
 set $itextcolor #e0d67899
 set $ubgcolor #E5353999
