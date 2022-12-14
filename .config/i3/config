@@ -3,7 +3,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 2
-gaps inner 5
+gaps inner 10
 gaps outer 1
 gaps top 1
 gaps bottom 1
@@ -19,7 +19,10 @@ workspace_auto_back_and_forth no
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-for_window [title="notepad"] floating enable, sticky enable
+assign [class="Zathura"] 7
+assign [class="Thunar"] 5
+assign [class="Brave-browser"] 6
+assign [class="feh"] 8
 
 bindsym $mod+Shift+q [title="notepad"] scratchpad show
 
