@@ -1,5 +1,5 @@
 #!/bin/bash
 
 ln -sf "$1" ~/.wallpaper
-convert "$1" -scale '1366x768^' -gravity Center -extent 1366x768 -blur 30x30 ~/.config/lockscreenbg.png
+convert "$1" -scale '1366x768^' -gravity Center -extent 1366x768 -blur 0x20 ~/.config/lockscreenbg.png
 feh --no-fehbg --bg-fill ~/.wallpaper
