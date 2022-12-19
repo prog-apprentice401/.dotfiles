@@ -5,6 +5,8 @@ syntax on
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr ctermbg=NONE
 nnoremap <C-L> :nohlsearch<CR><C-L>
-nnoremap x :e ~/.config/nvim/init.vim
+nnoremap x :e ~/.config/nvim/init.vim<Enter>
+nnoremap b :bd<Enter>
+nnoremap B :bw<Enter>
 nnoremap <C-C> :cd 
 nnoremap e :e 

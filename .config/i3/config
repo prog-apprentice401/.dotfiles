@@ -3,13 +3,13 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 2
-gaps inner 10
+gaps inner 7
 gaps outer 1
 gaps top 1
 gaps bottom 1
 
 # Font for window titles
-font pango: Iosevka 9
+font pango: Ubuntu 9
 
 title_align center
 for_window [class=".*"] title_format "%class: %title"
@@ -20,9 +20,15 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 assign [class="Zathura"] 7
+for_window [class="Zathura"] focus
 assign [class="Thunar"] 5
+for_window [class="Thunar"] focus
 assign [class="Brave-browser"] 6
+for_window [class="Brave-browser"] focus
 assign [class="feh"] 8
+for_window [class="feh"] focus
+assign [class="BleachBit"] 4
+for_window [class="BleachBit"] focus
 
 bindsym $mod+Shift+q [title="notepad"] scratchpad show
 
