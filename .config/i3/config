@@ -29,16 +29,12 @@ assign [class="feh"] 8
 for_window [class="feh"] focus
 assign [class="BleachBit"] 4
 for_window [class="BleachBit"] focus
+assign [class="Pavucontrol"] 4
+for_window [class="Pavucontrol"] focus
 
 bindsym $mod+Shift+q [title="notepad"] scratchpad show
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
-bindsym --release Shift+Control+$mod+l exec --no-startup-id i3lock -t -i ~/.config/lockscreenbg.png
+bindsym --release Shift+Control+$mod+l exec --no-startup-id loginctl lock-session
 
 set $bgcolor #aa6666
 set $ibgcolor #553333

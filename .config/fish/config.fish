@@ -27,6 +27,7 @@ alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
 abbr ac arduino-cli
 
 set -a PATH ~/bin/
+set -x RANGER_DEVICONS_SEPARATOR "  "
 
 if test "$TERM" = "linux"
 	echo -en "\e]P0111111" #black
