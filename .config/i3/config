@@ -3,10 +3,8 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 2
-gaps inner 7
-gaps outer 1
-gaps top 1
-gaps bottom 1
+gaps inner 4
+gaps outer 2
 
 # Font for window titles
 font pango: Ubuntu 9
@@ -36,8 +34,8 @@ bindsym $mod+Shift+q [title="notepad"] scratchpad show
 
 bindsym --release Shift+Control+$mod+l exec --no-startup-id loginctl lock-session
 
-set $bgcolor #aa6666
-set $ibgcolor #553333
+set $bgcolor #888888
+set $ibgcolor #88888866
 set $textcolor #ffff99dd
 set $itextcolor #e0d67899
 set $ubgcolor #E5353999

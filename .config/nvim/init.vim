@@ -7,9 +7,7 @@ hi LineNr ctermbg=NONE
 nnoremap <C-L> :nohlsearch<CR><C-L>
 nnoremap x :e ~/.config/nvim/init.vim<Enter>
 nnoremap f :e ~/.config/fish/config.fish<Enter>
-nnoremap b :bd<Enter>
-nnoremap B :bw<Enter>
-nnoremap <C-B> :bw!<Enter>
+nnoremap <C-B> :bw<Enter>
 nnoremap <C-S-B> :bw!<Enter>
 nnoremap <C-C> :cd 
 nnoremap e :e 
