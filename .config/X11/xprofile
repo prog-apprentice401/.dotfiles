@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# sourced at boot by ~/.xinitrc and most display managers
+
+
+# xdg standard configuration location (needed by some applications)
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# add ~/.local/bin to the PATH (application executables)
+export PATH="$HOME/.local/bin:$PATH"
+
+# set display timeout, sleep, and power off times
+xset dpms 600 900 0
+
+#set touchpad properties
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.6
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled" 1
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# set keyboard repeat rate
+xset r rate 170 80
+
+# set gamma value
+xgamma -gamma 0.95
+
+# left hand mouse
+#xmodmap -e "pointer = 3 2 1"
+
+# set background
+feh --bg-fill ~/.wallpaper
+
+# starting picom
+picom & disown
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+xss-lock --transfer-sleep-lock -- i3lock -u -c 111111 & disown
+
+sct 3500
