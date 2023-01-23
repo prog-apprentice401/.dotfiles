@@ -32,12 +32,12 @@ set -x RANGER_DEVICONS_SEPARATOR "  "
 set -x XDG_CONFIG_HOME "$HOME/.config"
 
 if test (tty) = "/dev/tty1"
-	pgrep i3 || startx "$XDG_CONFIG_HOME/X11/xinitrc_i3"
+	pgrep 'i3\$' || startx "$XDG_CONFIG_HOME/X11/xinitrc_i3"
 end
 
-if test (tty) = "/dev/tty2"
-	pgrep qtile || startx "$XDG_CONFIG_HOME/X11/xinitrc_qtile"
-end
+#if test (tty) = "/dev/tty2"
+#	pgrep qtile || startx "$XDG_CONFIG_HOME/X11/xinitrc_qtile"
+#end
 
 if test "$TERM" = "linux"
 	echo -en "\e]P0111111" #black

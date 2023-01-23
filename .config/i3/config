@@ -4,7 +4,7 @@ floating_modifier $mod
 
 for_window [class=".*"] border pixel 2
 gaps inner 4
-gaps outer 2
+gaps outer 0
 
 # Font for window titles
 font pango: Ubuntu 9
@@ -25,6 +25,8 @@ assign [class="Brave-browser"] 6
 for_window [class="Brave-browser"] focus
 assign [class="feh"] 8
 for_window [class="feh"] focus
+assign [class="viewnior"] 8
+for_window [class="viewnior"] focus
 assign [class="BleachBit"] 4
 for_window [class="BleachBit"] focus
 assign [class="Pavucontrol"] 4

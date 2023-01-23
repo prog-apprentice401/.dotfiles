@@ -18,10 +18,10 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Middle Emulation Enabled"
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # set keyboard repeat rate
-xset r rate 170 80
+xset r rate 160 80
 
 # set gamma value
-xgamma -gamma 0.95
+xgamma -gamma 1
 
 # left hand mouse
 #xmodmap -e "pointer = 3 2 1"
@@ -36,4 +36,4 @@ picom & disown
 # screen before suspend. Use loginctl lock-session to lock your screen.
 xss-lock --transfer-sleep-lock -- i3lock -u -c 111111 & disown
 
-sct 3500
+sct 3000
