@@ -3,7 +3,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 2
-gaps inner 4
+gaps inner 7
 gaps outer 0
 
 # Font for window titles
