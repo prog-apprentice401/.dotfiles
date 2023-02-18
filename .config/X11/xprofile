@@ -2,15 +2,8 @@
 
 # sourced at boot by ~/.xinitrc and most display managers
 
-
-# xdg standard configuration location (needed by some applications)
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# add ~/.local/bin to the PATH (application executables)
-export PATH="$HOME/.local/bin:$PATH"
-
 # set display timeout, sleep, and power off times
-xset dpms 600 900 0
+xset dpms 600 900 1200
 
 #set touchpad properties
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.6
@@ -27,13 +20,14 @@ xgamma -gamma 1
 #xmodmap -e "pointer = 3 2 1"
 
 # set background
-feh --bg-fill ~/.wallpaper
+feh --no-fehbg --bg-fill ~/.wallpaper
 
 # starting picom
-picom & disown
+picom --animations --experimental-backends -b & disown
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-xss-lock --transfer-sleep-lock -- i3lock -u -c 111111 & disown
+pgrep xss-lock | killall xss-lock
+xss-lock --transfer-sleep-lock -- i3lock --color=00000033 --time-color=ffffffbb --date-color=ffffffbb --indicator -k --radius=110 --ring-width=6 --inside-color=00000000 --insidever-color=00000000 --line-uses-inside --ring-color=ffffff77 --separator-color=00000000 --keyhl-color=ffffffff --bshl-color=00000033 --wrong-text="Wrong" --greeter-text="Locked" --greeter-color=ffffffbb --{time,date,greeter,wrong,verif,layout}-color=ffffffbb --wrong-color=ffffffbb --{time,date,greeter,wrong,verif,layout}-font="Ubuntu" --ringver-color=ffffff77 --insidever-color=00000000 --ringwrong-color=ffddddaa --insidewrong-color=55000033  -e & disown
 
 sct 3000

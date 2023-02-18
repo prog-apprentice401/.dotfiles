@@ -2,8 +2,8 @@ focus_follows_mouse no
 set $mod Mod4
 floating_modifier $mod
 
-for_window [class=".*"] border pixel 2
-gaps inner 7
+for_window [class=".*"] border pixel 1
+gaps inner 5
 gaps outer 0
 
 # Font for window titles
