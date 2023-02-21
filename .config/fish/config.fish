@@ -1,7 +1,7 @@
-alias nvim 'nvim -p'
+abbr nvim 'nvim -p'
 abbr src 'source ~/.config/fish/config.fish'
 abbr chrc 'nvim ~/.config/fish/config.fish'
-abbr chvi 'nvim ~/.config/nvim/init.vim'
+abbr chvi 'nvim ~/.config/nvim/init.lua'
 
 # abbr for git
 abbr gfetch 'git fetch'
@@ -26,10 +26,11 @@ alias dots '/usr/bin/git --git-dir $HOME/.dotfiles/ --work-tree $HOME'
 # abbr for arduino-cli
 abbr ac arduino-cli
 
-set -a PATH ~/bin/
-set -x RANGER_DEVICONS_SEPARATOR "  "
-
+set -a PATH $HOME/bin/
+set -a PATH $HOME/.local/bin/
 set -x XDG_CONFIG_HOME "$HOME/.config"
+
+set -x RANGER_DEVICONS_SEPARATOR "  "
 
 if test (tty) = "/dev/tty1"
 	pgrep 'i3\$' || startx "$XDG_CONFIG_HOME/X11/xinitrc_i3"
