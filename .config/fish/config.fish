@@ -28,17 +28,13 @@ abbr ac arduino-cli
 
 set -a PATH $HOME/bin/
 set -a PATH $HOME/.local/bin/
+set -x TERM screen-256color-bce
 set -x XDG_CONFIG_HOME "$HOME/.config"
 
 set -x RANGER_DEVICONS_SEPARATOR "  "
 
-if test (tty) = "/dev/tty1"
-	pgrep 'i3\$' || startx "$XDG_CONFIG_HOME/X11/xinitrc_i3"
-end
-
-#if test (tty) = "/dev/tty2"
-#	pgrep qtile || startx "$XDG_CONFIG_HOME/X11/xinitrc_qtile"
-#end
+set -x WWW_HOME 'https://duckduckgo.com'
+set -x SDCV_PAGER 'less'
 
 if test "$TERM" = "linux"
 	echo -en "\e]P0111111" #black
@@ -60,4 +56,11 @@ if test "$TERM" = "linux"
 
 	setfont ter-g16b
 	#clear
+end
+
+if test (tty) = "/dev/tty1"
+	pgrep 'i3\$' || startx "$XDG_CONFIG_HOME/X11/xinitrc_i3"
+end
+if test (tty) = "/dev/tty2"
+	tmux
 end

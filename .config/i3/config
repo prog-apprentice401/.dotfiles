@@ -3,7 +3,7 @@ set $mod Mod4
 floating_modifier $mod
 
 for_window [class=".*"] border pixel 1
-gaps inner 7
+gaps inner 5
 gaps outer 0
 
 # Font for window titles
@@ -17,20 +17,22 @@ workspace_auto_back_and_forth no
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-assign [class="Zathura"] 7
-for_window [class="Zathura"] focus
-assign [class="Thunar"] 5
-for_window [class="Thunar"] focus
-assign [class="Brave-browser"] 6
-for_window [class="Brave-browser"] focus
-assign [class="feh"] 8
-for_window [class="feh"] focus
-assign [class="viewnior"] 8
-for_window [class="viewnior"] focus
 assign [class="BleachBit"] 4
 for_window [class="BleachBit"] focus
 assign [class="Pavucontrol"] 4
 for_window [class="Pavucontrol"] focus
+assign [class="Thunar"] 5
+for_window [class="Thunar"] focus
+assign [class="Brave-browser"] 6
+for_window [class="Brave-browser"] focus
+assign [class="Zathura"] 7
+for_window [class="Zathura"] focus
+assign [class="feh"] 8
+for_window [class="feh"] focus
+assign [class="viewnior"] 8
+for_window [class="viewnior"] focus
+assign [class="org.gnome.clocks"] 9
+for_window [class="org.gnome.clocks"] focus
 
 bindsym $mod+Shift+q [title="notepad"] scratchpad show
 

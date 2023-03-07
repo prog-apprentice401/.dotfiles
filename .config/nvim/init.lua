@@ -23,7 +23,7 @@ require('packer').startup(function(use)
 			'j-hui/fidget.nvim',
 
 			-- Additional lua configuration, makes nvim stuff amazing
-			'folke/neodev.nvim',
+      'folke/neodev.nvim',
 		},
 	}
 
@@ -78,9 +78,9 @@ end)
 -- You'll need to restart nvim, and then it will work.
 if is_bootstrap then
 	print '=================================='
-	print '		Plugins are being installed'
-	print '		Wait until Packer completes,'
-	print '			 then restart nvim'
+	print ' Plugins are being installed'
+	print '	Wait until Packer completes,'
+	print ' then restart nvim'
 	print '=================================='
 	return
 end
@@ -364,12 +364,12 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 
-	sumneko_lua = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-		},
-	},
+	-- sumneko_lua = {
+	-- 	Lua = {
+	-- 		workspace = { checkThirdParty = false },
+	-- 		telemetry = { enable = false },
+	-- 	},
+	-- },
 }
 
 -- Setup neovim lua configuration
