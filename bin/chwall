@@ -1,4 +1,5 @@
 #!/bin/bash
 
 ln -sf "$1" ~/.wallpaper
-feh --no-fehbg --bg-fill ~/.wallpaper
+pgrep swaybg && killall swaybg
+swaybg -i ~/.wallpaper & disown

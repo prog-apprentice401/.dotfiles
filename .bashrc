@@ -71,10 +71,11 @@ get_branch ()
 		echo -e "\e[1;33m \uE0A0 $branch \e[0m"
 	fi
 }
-arrowSymbol=$(echo -e "\u276F")
+arrowSymbol='$'
 PROMPT_COMMAND='exitStatus=$(get_exit_status);branch=$(get_branch);'
+
 if [ "$color_prompt" = yes ]; then
-	PS1='${debian_chroot:+($debian_chroot)}${exitStatus}\w ${branch}\[\e[00;37m\]\n${arrowSymbol}\[\e[0m\] '
+	PS1='${debian_chroot:+($debian_chroot)}\[\e[1;32m\]\u\[\e[0;0m\] in \[\e[1;34m\]\w ${branch}\n ${exit_status}${arrowSymbol}\[\e[0m\] '
 	PROMPT_DIRTRIM=3
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\D{} \n\$'
@@ -143,23 +144,9 @@ mkcd ()
 
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-colorscript -r
-
 if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0282a36" #black
-    echo -en "\e]P8666666" #darkgrey
-    echo -en "\e]P1aa2222" #darkred
-    echo -en "\e]P9ff5555" #red
-    echo -en "\e]P230aa5b" #darkgreen
-    echo -en "\e]PA50fa7b" #green
-    echo -en "\e]P3D7AF87" #brown
-    echo -en "\e]PBf1fa8c" #yellow
-    echo -en "\e]P49966bb" #darkblue
-    echo -en "\e]PCbd93ff" #blue
-    echo -en "\e]P5aa5588" #darkmagenta
-    echo -en "\e]PDff79c6" #magenta
-    echo -en "\e]P666bbcc" #darkcyan
-    echo -en "\e]PE8be9fd" #cyan
-    echo -en "\e]P7E5E5E5" #lightgrey
-    echo -en "\e]PFdddddd" #white
+	export TERM="screen-256color-bce"
+	ttyscheme onedark
 fi
+
+please

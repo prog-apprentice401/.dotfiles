@@ -150,8 +150,8 @@ vim.g.maplocalleader = ' '
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', 'x', ":e ~/.config/nvim/init.lua<Enter>", {silent = true})
-vim.keymap.set('n', 'f', ":e ~/.config/fish/config.fish<Enter>", {silent = true})
+vim.keymap.set('n', '<C-x>', ":e ~/.config/nvim/init.lua<Enter>", {silent = true})
+vim.keymap.set('n', '<C-f>', ":e ~/.config/fish/config.fish<Enter>", {silent = true})
 vim.keymap.set('n', '<C-b>', ":bw<Enter>")
 vim.keymap.set('n', '<C-S-b>', ":bw!<Enter>")
 vim.keymap.set('n', '<C-c>', ":cd ")
