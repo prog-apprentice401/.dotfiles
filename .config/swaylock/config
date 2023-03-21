@@ -1,11 +1,11 @@
 daemonize
 show-failed-attempts
 clock
-color=282c34aa
+color=282c3455
 font="Ubuntu"
 indicator
 indicator-radius=100
-indicator-thickness=5
+indicator-thickness=6
 line-uses-inside
 ring-color=191724
 inside-color=282c34
