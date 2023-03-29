@@ -2,4 +2,4 @@
 
 ln -sf "$1" ~/.wallpaper
 pgrep swaybg && killall swaybg
-swaybg -i ~/.wallpaper & disown
+swaybg -m fill -i ~/.wallpaper & disown

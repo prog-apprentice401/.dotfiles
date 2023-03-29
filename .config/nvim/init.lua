@@ -51,7 +51,7 @@ require('packer').startup(function(use)
 
 	use 'navarasu/onedark.nvim' -- Theme inspired by Atom
 	use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-	use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+	-- use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 	use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
 --	use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
@@ -93,74 +93,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 	pattern = vim.fn.expand '$MYVIMRC',
 })
 
--- [[ Setting options ]]
--- See `:help vim.o`
-
--- Set highlight on search
-vim.o.hlsearch = false
-
--- Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Enable break indent
-vim.o.breakindent = false
-
--- Enable automatic indentation
-vim.o.smartindent = true
-vim.o.autoindent = true
-
--- set tabwidths
-vim.bo.tabstop = 8
-vim.bo.softtabstop = 8
-vim.bo.shiftwidth = 8
-
--- don't exapnd tabs -- it's sorta annoyning
-vim.bo.expandtab = false
-
--- Save undo history
-vim.o.undofile = true
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
-
--- Set colorscheme
-vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
-vim.cmd [[hi Normal guibg=None ctermbg=None]]
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
--- See `:help mapleader`
---	NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
-vim.keymap.set('n', '<C-x>', ":e ~/.config/nvim/init.lua<Enter>", {silent = true})
-vim.keymap.set('n', '<C-f>', ":e ~/.config/fish/config.fish<Enter>", {silent = true})
-vim.keymap.set('n', '<C-b>', ":bw<Enter>")
-vim.keymap.set('n', '<C-S-b>', ":bw!<Enter>")
-vim.keymap.set('n', '<C-c>', ":cd ")
-vim.keymap.set('n', 'e', ":e ")
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -189,10 +121,10 @@ require('Comment').setup()
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
-require('indent_blankline').setup {
-	char = '┊',
-	show_trailing_blankline_indent = false,
-}
+-- require('indent_blankline').setup {
+-- 	char = '┊',
+-- 	show_trailing_blankline_indent = false,
+-- }
 
 -- Gitsigns
 -- See `:help gitsigns.txt`
@@ -246,7 +178,7 @@ require('nvim-treesitter.configs').setup {
 	ensure_installed = { 'c', 'cpp', 'lua', 'python', 'help', 'vim' },
 
 	highlight = { enable = true },
-	indent = { enable = true, disable = {	} },
+	indent = { enable = false, disable = {	} },
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -448,3 +380,74 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+-- [[ Setting options ]]
+-- See `:help vim.o`
+
+-- Set highlight on search
+vim.o.hlsearch = false
+
+-- Make line numbers default
+vim.wo.number = true
+vim.wo.relativenumber = true
+
+-- Enable mouse mode
+vim.o.mouse = 'a'
+
+-- Enable break indent
+vim.o.breakindent = false
+
+-- Enable automatic indentation
+vim.o.smartindent = true
+vim.o.autoindent = true
+
+-- set tabwidths
+local set = vim.opt -- set options
+set.tabstop = 8
+set.softtabstop = 8
+set.shiftwidth = 8
+
+-- don't exapnd tabs -- it's sorta annoyning
+vim.bo.expandtab = false
+
+-- Save undo history
+vim.o.undofile = true
+
+-- Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
+
+-- Set colorscheme
+vim.o.termguicolors = true
+vim.cmd [[colorscheme onedark]]
+vim.cmd [[hi Normal guibg=None ctermbg=None]]
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- [[ Basic Keymaps ]]
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--	NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+vim.keymap.set('n', '<C-x>', ":e ~/.config/nvim/init.lua<Enter>", {silent = true})
+vim.keymap.set('n', '<C-f>', ":e ~/.config/fish/config.fish<Enter>", {silent = true})
+vim.keymap.set('n', '<C-b>', ":bw<Enter>")
+vim.keymap.set('n', '<C-S-b>', ":bw!<Enter>")
+vim.keymap.set('n', '<C-c>', ":cd ")
+vim.keymap.set('n', 'e', ":e ")
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- vim.cmd [[let g:python_recommended_style = 0]]

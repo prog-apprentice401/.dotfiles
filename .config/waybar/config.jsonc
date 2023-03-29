@@ -7,25 +7,29 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
-        "custom/weather"
-        // "hyprland/window"
+        //"sway/submap"
+        "wlr/workspaces"
     ],
-    "modules-center": ["wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [
         // "custom/language",
         // "cpu",
         // "memory",
         "pulseaudio",
 	"temperature",
-        "battery"
+        "battery",
+        "clock"
     ],
 
+    "sway/submap": {
+        "format":"{}"
+    },
     "hyprland/window": {
-        "format": "{}"
+        "format": "{}",
+	"max-length": 30
     },
     "battery" : {
-	"full-at" : 99,
+	"full-at" : 100,
 	"interval": 60,
 	"states" : {
             "warning": 30,
@@ -35,7 +39,7 @@
         "format-full" : " {capacity}%",
         "format-charging" : " {capacity}%",
         "format-discharging" : "{icon} {capacity}%",
-	"format-icons": ["", "", "", "", ""]
+	"format-icons": ["", "", "", "", ""]
     },
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",

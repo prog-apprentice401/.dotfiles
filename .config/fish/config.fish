@@ -17,6 +17,7 @@ abbr gpush 'git push'
 abbr grem 'git remote'
 abbr gckt 'git checkout'
 abbr gclone 'git clone'
+abbr bp 'bpython'
 
 alias la 'ls -A'
 
