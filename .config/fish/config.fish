@@ -42,10 +42,10 @@ end
 
 if test "$TERM" = "linux"
 	set -x TERM "screen-256color-bce"
-	ttyscheme bash
 	setfont ter-g16b
 end
 
 if test (tty) = "/dev/tty2"
 	tmux
 end
+

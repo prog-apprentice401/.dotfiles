@@ -7,10 +7,12 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        //"sway/submap"
+        "clock",
+        "hyprland/submap"
+    ],
+    "modules-center": [
         "wlr/workspaces"
     ],
-    "modules-center": ["hyprland/window"],
     "modules-right": [
         // "custom/language",
         // "cpu",
@@ -18,15 +20,16 @@
         "pulseaudio",
 	"temperature",
         "battery",
-        "clock"
+	"pulseaudio#microphone"
     ],
 
-    "sway/submap": {
-        "format":"{}"
+    "hyprland/submap": {
+        "format":"{}",
+	"min-length": 5
     },
-    "hyprland/window": {
-        "format": "{}",
-	"max-length": 30
+    "hyprlaid/window": {
+        "format": "{title}",
+	"max-length": 5
     },
     "battery" : {
 	"full-at" : 100,
@@ -36,10 +39,10 @@
 	    "critical" : 15
 	},
 	
-        "format-full" : " {capacity}%",
-        "format-charging" : " {capacity}%",
+        "format-full" : "{icon} {capacity}%",
+        "format-charging" : " {icon} {capacity}%",
         "format-discharging" : "{icon} {capacity}%",
-	"format-icons": ["", "", "", "", ""]
+	"format-icons": ["", "", "", "", ""]
     },
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -110,9 +113,9 @@
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
@@ -127,8 +130,8 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "tooltip": false,
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
