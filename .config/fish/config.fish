@@ -36,13 +36,13 @@ set -x RANGER_DEVICONS_SEPARATOR "  "
 set -x WWW_HOME 'https://duckduckgo.com'
 set -x SDCV_PAGER 'less'
 
-if test (tty) = "/dev/tty1"
-	Hyprland
-end
-
 if test "$TERM" = "linux"
 	set -x TERM "screen-256color-bce"
 	setfont ter-g16b
+end
+
+if test (tty) = "/dev/tty1"
+	Hyprland
 end
 
 if test (tty) = "/dev/tty2"

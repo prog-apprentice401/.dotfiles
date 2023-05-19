@@ -20,7 +20,7 @@ xgamma -gamma 1
 #xmodmap -e "pointer = 3 2 1"
 
 # set background
-feh --no-fehbg --bg-fill ~/.wallpaper
+~/.fehbg
 
 # starting picom
 picom & disown
